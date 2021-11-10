@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Leanne Graham",
+    "class": 4,
+    "section": "D",
+    "sub1": 97,
+    "sub2": 56,
+    "sub3": 79
+  },
+  {
+    "name": "Ervin Howell",
+    "class": 3,
+    "section": "B",
+    "sub1": 45,
+    "sub2": 56,
+    "sub3": 67
+  },
+  {
+    "name": "Clementine Bauch",
+    "class": 1,
+    "section": "A",
+    "sub1": 79,
+    "sub2": 56,
+    "sub3": 80
+  },
+  {
+    "name": "Patricia Lebsack",
+    "class": 5,
+    "section": "C",
+    "sub1": 43,
+    "sub2": 56,
+    "sub3": 78
+  },
+  {
+    "name": "Dietrich Chelsey",
+    "class": 2,
+    "section": "E",
+    "sub1": 23,
+    "sub2": 54,
+    "sub3": 67
+  }
+]

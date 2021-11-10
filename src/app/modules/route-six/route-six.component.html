@@ -1,0 +1,8 @@
+<section class="scrollable-area d-flex flex-wrap justify-content-center" (scroll)="onScroll($event)">
+  <div
+    *ngFor="let n of numSequence(); let i = index"
+    class="d-flex justify-content-center align-items-center card dynamic-div"
+  >
+    <button class="btn" (click)="showAlert(i)">Click me</button>
+  </div>
+</section>

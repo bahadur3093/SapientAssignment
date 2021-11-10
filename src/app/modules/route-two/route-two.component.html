@@ -1,0 +1,41 @@
+<div class="d-flex justify-content-end align-items-center">
+  <ul class="d-flex justify-content-between grid-view-type">
+    <li
+      [ngClass]="{ active: !isListView }"
+      (click)="toggleGridView()"
+      title="Grid View"
+    >
+      <i class="fas fa-th-large"></i>
+    </li>
+    <li
+      [ngClass]="{ active: isListView }"
+      (click)="toggleGridView()"
+      title="List View"
+    >
+      <i class="fas fa-list"></i>
+    </li>
+  </ul>
+
+  <div class="product-sort-field">
+    <select (change)="productSort($event)">
+      <option disabled selected>-- Please select --</option>
+      <option value="asc">Price: Low to High</option>
+      <option value="desc">Price: High to Low</option>
+    </select>
+  </div>
+</div>
+
+<div class="row">
+  <div
+    [ngClass]="isListView ? 'col-50' : 'col-25'"
+    *ngFor="let product of products"
+  >
+    <div class="card product-card">
+      <img [src]="product.url" [attr.alt]="product.title" />
+      <div class="d-flex justify-content-between">
+        <div class="title">{{ product.title }}</div>
+        <h6>&#8377; {{ product.price }}</h6>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<section
+  class="
+    d-flex
+    justify-content-around
+    align-items-center
+    text-center
+    card card-height
+  "
+  *ngIf="countdownDetails && (countdownDetails.startClickCount || countdownDetails.pauseClickCount)"
+>
+  <div>
+    <span class="click-count"> {{ countdownDetails.startClickCount }}</span>
+    <h2>Stated</h2>
+  </div>
+
+  <div>
+    <span class="click-count"> {{ countdownDetails.pauseClickCount }}</span>
+    <h2>Paused</h2>
+  </div>
+</section>

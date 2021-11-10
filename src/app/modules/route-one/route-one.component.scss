@@ -1,0 +1,23 @@
+.floating-divs {
+  div {
+    border: 2px solid #000000;
+    padding: 15px;
+    overflow: hidden;
+
+    .scrolling-text {
+      white-space: nowrap;
+      animation: scrollText 10s infinite linear;
+      padding: 0;
+      border: 0;
+      font-size: 16px;
+      font-weight: 600;
+      transform: translateX(100%);
+    }
+
+    @keyframes scrollText {
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<div class="card">
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let heading of tableHeaders" (click)="dataSorting(heading)">
+          <div class="d-flex justify-content-between align-items-center">
+              <span>{{ heading }} </span>
+              <i class="fas fa-sort"></i>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of studentsData">
+        <td>{{ data.name }}</td>
+        <td>{{ data.class }}</td>
+        <td>{{ data.section }}</td>
+        <td>{{ data.sub1 }}</td>
+        <td>{{ data.sub2 }}</td>
+        <td>{{ data.sub3 }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div>

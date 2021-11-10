@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f7f8fa;
+  font-size: 14px;
+  color: #000000;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left-panel {
+  flex-basis: 200px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: 0px 0px 5px 1px #ddd;
+}
+
+.wrapper {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  padding: 40px 30px 30px;
+  height: calc(100vh - 70px);
+  overflow-y: scroll;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0px 0px 5px 1px #ddd;
+}
+.card-height {
+  min-height: 150px;
+}
+
+.btn {
+  background: rgb(38, 173, 153);
+  background: linear-gradient(
+    90deg,
+    rgba(38, 173, 153, 1) 2%,
+    rgba(126, 207, 102, 1) 100%
+  );
+  box-shadow: rgba(100, 100, 111, 0.7) 0px 7px 29px 0px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: 0;
+  color: #000000;
+  cursor: pointer;
+
+  &:disabled {
+    box-shadow: 0 0 0;
+    pointer-events: none;
+    background: #dddddd;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+.row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 15px;
+}
+
+.col-25 {
+  flex: 0 0 auto;
+  width: calc(25% - 30px);
+}
+
+.col-33 {
+  flex: 0 0 auto;
+  width: calc(33.33% - 30px);
+}
+
+.col-40 {
+  flex: 0 0 auto;
+  width: calc(40% - 30px);
+}
+
+.col-50 {
+  flex: 0 0 auto;
+  width: calc(50% - 30px);
+}
+
+.col-60 {
+  flex: 0 0 auto;
+  width: calc(60% - 30px);
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-end {
+  justify-content: end;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+.text-center {
+  text-align: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}

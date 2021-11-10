@@ -1,0 +1,12 @@
+ul {
+  list-style: circle;
+  padding: 0 15px;
+  li {
+    border-bottom: 1px dotted #dddddd;
+    padding: 5px 0;
+
+    &:last-child{
+        border:0;
+    }
+  }
+}

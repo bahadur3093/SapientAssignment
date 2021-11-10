@@ -1,0 +1,47 @@
+.navigation-items {
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 30px);
+  justify-content: center;
+  ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex-basis: 200px;
+      margin: 0 15px 30px;
+
+      a {
+        justify-content: center;
+        height: 150px;
+        align-items: center;
+        display: flex;
+        box-shadow: 5px 5px 10px 0px #dddddd;
+        background: rgb(38, 173, 153);
+        background: linear-gradient(
+          90deg,
+          rgba(38, 173, 153, 1) 2%,
+          rgba(126, 207, 102, 1) 100%
+        );
+        color: #000;
+        text-decoration: none;
+        font-size: 20px;
+        transition: 0.2s ease-in-out;
+        transform: scale(1);
+
+        i{
+            font-size: 30px;
+            display: block;
+            margin-bottom: 10px;
+        }
+      }
+
+      &:hover{
+          transition: 0.2s ease-in-out;
+          transform: scale(1.05);
+      }
+    }
+  }
+}

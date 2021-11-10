@@ -1,0 +1,17 @@
+<div class="row row-eq-height">
+    <div class="col-40">
+      <app-count-down-timer [timerValue]="timerValue"
+      (countdownTimerDetails)="pushCountdownTimerDetails($event)"
+      ></app-count-down-timer>
+      <app-count-down-display [countdownTimerDetails]="countTimerData"></app-count-down-display>
+    </div>
+    <div class="col-60">
+      <app-count-down-input 
+      (pushTimerValue)="getTimerValue($event)"
+      (toggletimer)="toggletimer()"
+      (resetTimerDetails)="resetTimerDetails()"
+      [countdownTimerDetails]="countTimerData"
+      ></app-count-down-input>
+      <app-count-down-track [countdownTimerDetails]="countTimerData"></app-count-down-track>
+    </div>
+  </div>

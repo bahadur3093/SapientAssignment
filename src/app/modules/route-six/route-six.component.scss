@@ -1,0 +1,19 @@
+.scrollable-area {
+    height: 86vh;
+    overflow-y: scroll;
+    min-width: 100vh;
+}
+
+.scrollable-area div{
+    width: 200px;
+    height:200px;
+    margin:15px;
+}
+
+.dynamic-div{
+    .btn{
+        background-color: #ffae1c;
+        padding: 8px 15px;
+        border-radius: 15px;
+    }
+}
