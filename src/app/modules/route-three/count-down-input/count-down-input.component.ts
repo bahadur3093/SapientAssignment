@@ -21,8 +21,7 @@ export class CountDownInputComponent implements OnInit {
   @Output() toggletimer = new EventEmitter();
   @Output() resetTimerDetails = new EventEmitter();
 
-  seconds: number;
-  timerValue: number = null;
+  timerValue: number;
   pausedAt: number[];
 
   constructor() {}

@@ -28,6 +28,7 @@ export class CountDownTimerComponent implements OnInit {
   toggleTimer(timerCount) {
     if (timerCount !== this.current) {
       this.isTimerPaused = true;
+      clearInterval(this.interval);
     }
 
     if (this.isTimerPaused) {

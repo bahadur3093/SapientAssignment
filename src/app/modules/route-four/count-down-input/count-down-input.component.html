@@ -1,4 +1,4 @@
-<section class="card card-height">
+<!-- <section class="card card-height">
   <div class="timer-field">
     <label for="timer"> Enter Timer Limit </label>
     <input type="number" id="timer" name="timer" [(ngModel)]="seconds" (keyup)="validteValue(seconds)"/>
@@ -30,4 +30,44 @@
   </div>
 </section>
 
+ -->
 
+
+ <section class="card card-height">
+  <form #timerForm="ngForm" (ngSubmit)="toggleTimer(timerForm)">
+    <div class="timer-field">
+      <label for="timer"> Enter Timer Limit </label>
+      <input
+        type="number"
+        id="timer"
+        name="timer"
+        [(ngModel)]="timerValue"
+        required
+        (keyup)="validteValue(timerForm)"
+      />
+
+      <span *ngIf="timerValue && !(timerValue > 0)" class="is-error">
+        Value can not be less than 1
+      </span>
+    </div>
+
+    <div class="timer-buttons">
+      <button class="btn" [disabled]="!(timerValue > 0)" type="submit">
+        Start / Pause
+      </button>
+
+      <button
+        class="btn"
+        [disabled]="!timerForm.valid"
+        (click)="resetTimer(timerForm)"
+        type="button"
+      >
+        Reset
+      </button>
+    </div>
+  </form>
+
+  <ul class="paused-at">
+    <li *ngFor="let pauseTime of pausedAt">Paused at {{ pauseTime }}</li>
+  </ul>
+</section>

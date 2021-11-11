@@ -12,7 +12,8 @@ export class CountDownTimerComponent implements OnInit, OnDestroy {
   counter = 0;
   isTimerPaused = true;
   interval;
-  subscription: Subscription;
+  timerServiceSubscription: Subscription;
+  resetTimerValuesSubscription: Subscription;
 
   countArray = [];
 
@@ -26,8 +27,13 @@ export class CountDownTimerComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     let current = 0;
-    this.subscription = this.timerService.toggleTimer.subscribe(() => {
+    this.timerServiceSubscription = this.timerService.toggleTimer.subscribe(() => {
       let value = this.timerService.getTimerValue();
+
+      if (value !== current) {
+        this.isTimerPaused = true;
+        clearInterval(this.interval);
+      }
 
       if (this.isTimerPaused) {
         if (value !== current) {
@@ -68,7 +74,7 @@ export class CountDownTimerComponent implements OnInit, OnDestroy {
 
     });
 
-    this.subscription = this.timerService.resetTimerValues.subscribe(() =>{
+    this.resetTimerValuesSubscription = this.timerService.resetTimerValues.subscribe(() =>{
       this.isTimerPaused = true;
       this.counter = 0;
       clearInterval(this.interval);
@@ -95,10 +101,6 @@ export class CountDownTimerComponent implements OnInit, OnDestroy {
     clearInterval(this.interval);
   }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
-
   getDateAndTime() {
     const date = new Date();
     const dd = date.getDate();
@@ -106,5 +108,10 @@ export class CountDownTimerComponent implements OnInit, OnDestroy {
     const yyyy = date.getFullYear();
 
     return `${dd}/${mm}/${yyyy} ${date.toLocaleTimeString()}`;
+  }
+
+  ngOnDestroy() {
+    this.timerServiceSubscription.unsubscribe();
+    this.resetTimerValuesSubscription.unsubscribe();
   }
 }
